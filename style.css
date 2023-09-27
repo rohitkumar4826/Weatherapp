@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#currentWeather, #forecast {
+    margin-top: 20px;
+}
+
+#currentWeather h2, #forecast h2 {
+    color: #333;
+}
+
+#currentWeather p, #forecast p {
+    margin: 5px 0;
+}
+
+#forecastData {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    grid-gap: 20px;
+    justify-items: center; 
+    align-items: center; 
+}
+
+
+.weather-card {
+    width: 45%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.weather-card h3 {
+    margin: 0;
+    color: #333;
+}
+
+.weather-card p {
+    margin: 5px 0;
+}
+/* CSS for forecast items */
+.forecast-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    display: inline-block;
+    width: calc(60% - 10px); /* Adjust the width as needed for your layout */
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+/* Hover effect */
+.forecast-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Text styles */
+.forecast-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Date and temperature styles */
+.forecast-item .date {
+    font-weight: bold;
+}
+
+.forecast-item .temperature {
+    color: #ff5733; 
+    font-size: 20px;
+}
+#weatherIcon {
+    max-width: 60px; 
+    height: auto; 
+    display: block;
+    margin-top: 10px;
+}

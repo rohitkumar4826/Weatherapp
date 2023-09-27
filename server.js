@@ -20,7 +20,7 @@ app.post('/currentWeather', async (req, res) => {
     const cityName = req.body.city;
     console.log('cityname',cityName);
     try {
-        const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=ea34265dc5794c4d47e857bcb7d1427b`);
+        const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=ea34265dc5794c4d47e857bcb7d1427b&units=metric`);
         if(req.body.units==='Farenheit')
         {
             let degree = response.data.main.temp;

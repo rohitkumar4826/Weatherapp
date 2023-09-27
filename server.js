@@ -20,14 +20,20 @@ app.post('/currentWeather', async (req, res) => {
     const cityName = req.body.city;
     console.log('cityname',cityName);
     try {
-        const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=ea34265dc5794c4d47e857bcb7d1427b`);
-        if(req.body.units==='Celcius')
-        {
-            let degree = response.data.main.temp;
-            degree= degree*9/5+32;
-            response.data.main.temp=degree;
+        
+        if(req.body.units==='Farenheit')
+        {    
+            let win;
+            const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=ea34265dc5794c4d47e857bcb7d1427b&units=metric`);
+             win=response.data.wind.speed;
+            response.data.wind.speed=(win*(3.6)).toFixed(1);
+            res.json(response.data);
+        }else{
+            const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=ea34265dc5794c4d47e857bcb7d1427b&units=imperial`);
+             win=response.data.wind.speed;
+            response.data.wind.speed=(win*(1.60934)).toFixed(1);
+            res.json(response.data);
         }
-        res.json(response.data);
         // console.log(response.data)
     } catch (error) {
         res.status(500).json({ error: 'Unable to fetch data' });

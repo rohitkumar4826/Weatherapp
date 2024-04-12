@@ -53,21 +53,21 @@ document
   });
 // Mapping of weather descriptions to icon filenames
 const weatherIcons = {
-  "clear sky": "clear-sky.png",
-  "few clouds": "few-clouds.png",
-  "scattered clouds": "scattered-clouds.png",
-  "broken clouds": "broken-clouds.png",
-  "shower rain": "shower-rain.png",
-  "rain": "rain.png",
-  "thunderstorm": "thunderstorm.png",
-  "snow": "snow.png",
-  "mist": "mist.png",
-  "fog": "fog.png",
-  "hot": "hot.png",
+  "clear sky": "/assets/clear-sky.png",
+  "few clouds": "/assets/few-clouds.png",
+  "scattered clouds": "/assets/scattered-clouds.png",
+  "broken clouds": "/assets/broken-clouds.png",
+  "shower rain": "/assets/shower-rain.png",
+  "rain": "/assets/rain.png",
+  "thunderstorm": "/assets/thunderstorm.png",
+  "snow": "/assets/snow.png",
+  "mist": "/assets/mist.png",
+  "fog": "/assets/fog.png",
+  "hot": "/assets/hot.png",
 };
 function getWeatherIconURL(description) {
   const lowerCaseDescription = description.toLowerCase();
-  return weatherIcons[lowerCaseDescription] || "default-icon.png"; // Provide a default icon
+  return weatherIcons[lowerCaseDescription] || "default-icon.png";
 }
 
 function calculateAverageTemperature(forecastList) {
